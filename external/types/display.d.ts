@@ -758,7 +758,7 @@ declare namespace _pdfjs {
      * (necessary to implement e.g. a loading bar). The callback receives
      * an {Object} with the properties: {number} loaded and {number} total.
      */
-    onProgress: DocumentLoadingProgress | null;
+    onProgress: documentLoadingProgressCallback | null;
 
     /**
      * Callback to when unsupported feature is used. The callback receives
@@ -791,6 +791,10 @@ declare namespace _pdfjs {
       onRejected?: (reason?: Error) => R2 | PromiseLike<R2>
     ): Promise<R1 | R2>;
   }
+
+  type documentLoadingProgressCallback = (
+    documentLoadingProgress: DocumentLoadingProgress
+  ) => void;
 
   type passwordCallback = (
     newPassword: (password: string) => void,
