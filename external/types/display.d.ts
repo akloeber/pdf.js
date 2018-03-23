@@ -767,9 +767,9 @@ declare namespace _pdfjs {
     onUnsupportedFeature: unsupportedFeatureCallback | null;
 
     /**
-     * @return {Promise}
+     * @type {Promise<PDFDocumentProxy>}
      */
-    promise(): Promise<PDFDocumentProxy>;
+    promise: Promise<PDFDocumentProxy>;
 
     /**
      * Aborts all network requests and destroys worker.
